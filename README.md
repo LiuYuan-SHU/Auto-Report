@@ -21,9 +21,9 @@ python -m pip install -i https://pypi.doubanio.com/simple selenium
 首先需要安装Chrome浏览器，然后[下载Chrome驱动](https://chromedriver.chromium.org/downloads)。在下载之前，需要检查自己的Chrome的浏览器版本，然后再选择对应的版本安装
 
 <div align="center">
-	<img src="README.assets/image-20220823173442755.png" alt="image-20220823173442755" style="zoom:1%;" />
-	<img src="README.assets/image-20220823173510139.png" alt="image-20220823173510139" style="zoom:1%;" />
-	<img src="README.assets/image-20220823173531918.png" alt="image-20220823173531918" style="zoom:1%;" />
+	<img src="README.assets/image-20220823173442755.png" alt="image-20220823173442755" style="zoom:25%;" />
+	<img src="README.assets/image-20220823173510139.png" alt="image-20220823173510139" style="zoom:25%;" />
+	<img src="README.assets/image-20220823173531918.png" alt="image-20220823173531918" style="zoom:25%;" />
 </div>
 
 安装完之后，需要将下载好的压缩包解压，然后将可执行文件添加到系统环境变量中
