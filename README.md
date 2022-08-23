@@ -13,7 +13,10 @@
 #### Selenium
 
 ```sh
+# 国内镜像
 python -m pip install -i https://pypi.doubanio.com/simple selenium
+# 国外服务器
+python -m pip install selenium
 ```
 
 #### WebDriver for Chrome
