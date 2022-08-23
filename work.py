@@ -146,9 +146,9 @@ def main():
 
     for item in item_list:
         browser.get(item.get_attribute('href'))
+        item_text = item.get_attribute(re.search('(\d{4}-\d{2}-\d{2})', item.text).group(0))
         submit_info()
-        browser.back()
-        logging.info('finished item with date ' + re.search('(\d{4}-\d{2}-\d{2})', item.text).group(0))
+        logging.info('finished item with date ' + item_text)
 
 if __name__ == '__main__':
     try:
