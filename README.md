@@ -57,6 +57,10 @@ python -m pip install selenium
 python3 ./work.py
 ```
 
+## 项目更新：
+
++ 1.1: 添加了命令行直接登录的方式：`python3 ./work.py <username> <password>`
+
 ## 项目结构
 
 ```mermaid

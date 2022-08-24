@@ -136,23 +136,29 @@ def submit_info():
     # 防止点击过快造成的表单提交失败
     sleep(1.5)
 
-def main():
-    username = input('please input your student ID in SHU: ')
-    password = input("please input your student password in SHU(Don't worry, the program won't record your ID & Password):")
+def main(username, password):
+    if username == None:
+        username = input('please input your student ID in SHU: ')
+        password = input("please input your student password in SHU(Don't worry, the program won't record your ID & Password):")
     login(username, password)
 
     # get datalist
     item_list = get_item_list()
 
     for item in item_list:
+        logging.info(item.get_attribute('href'))
         browser.get(item.get_attribute('href'))
-        item_text = item.get_attribute(re.search('(\d{4}-\d{2}-\d{2})', item.text).group(0))
         submit_info()
-        logging.info('finished item with date ' + item_text)
 
 if __name__ == '__main__':
     try:
-        main()
+        username = None
+        password = None
+        if len(sys.argv) == 3:
+            username = sys.argv[1]
+            password = sys.argv[2]
+        main(username, password)
+        
         logging.info('all reportsfinished, exit')
     finally:
         browser.close()
