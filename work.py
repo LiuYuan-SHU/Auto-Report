@@ -59,7 +59,7 @@ def login(username, password):
 
     return
 
-# return reversed datalist
+# return reversed href list
 # 需要注意的是，如果超时，那么就会默认所有每日一报已经完成，那么就会结束程序
 def get_item_list():
     logging.info('scraping reports list')
@@ -68,6 +68,7 @@ def get_item_list():
     try:
         wait = WebDriverWait(browser, 3)
         item_list = wait.until(EC.presence_of_all_elements_located((By.XPATH, './/a[@class="f-datalist-item-inner" and contains(text(), "未填报")]')))
+        item_list = [item.get_attribute('href') for item in item_list]
     except TimeoutException:
         logging.info('all reports submitted, exit')
         sys.exit()
@@ -146,8 +147,8 @@ def main(username, password):
     item_list = get_item_list()
 
     for item in item_list:
-        logging.info(item.get_attribute('href'))
-        browser.get(item.get_attribute('href'))
+        logging.info(item)
+        browser.get(item)
         submit_info()
 
 if __name__ == '__main__':

@@ -9,6 +9,14 @@
 - [AutoReport](#autoreport)
 - [免责声明](#免责声明)
 - [quick start](#quick-start)
+	- [安装依赖](#安装依赖)
+		- [Python](#python)
+		- [Selenium](#selenium)
+		- [WebDriver for Chrome](#webdriver-for-chrome)
+	- [配置data.json](#配置datajson)
+		- [`in_Shanghai_index`](#in_shanghai_index)
+		- [`is_home_address`](#is_home_address)
+	- [运行程序](#运行程序)
 - [项目更新：](#项目更新)
 - [项目结构](#项目结构)
 - [存在的一些问题](#存在的一些问题)
@@ -71,6 +79,7 @@ python3 ./work.py
 # 项目更新：
 
 + 1.1: 添加了命令行直接登录的方式：`python3 ./work.py <username> <password>`
++ 1.2: 修改了`get_item_list`返回的数据类型，增加了程序的鲁棒性
 
 # 项目结构
 
