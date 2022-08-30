@@ -33,6 +33,11 @@ report_history_url = 'https://selfreport.shu.edu.cn/ReportHistory.aspx'
 # 如果出现这样的情况，提醒检查网络状态并退出程序
 # 如果输入了错误的账号和密码，那么也会退出程序
 def login(username, password):
+    """
+    :param username: str
+    :param password: str
+    :return: None
+    """
     try:
         browser.get(report_history_url)
         wait = WebDriverWait(browser, 10)
